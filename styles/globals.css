@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;700&display=swap');
+
+/* Font Global */
+body {
+  @apply font-sans bg-pink-50 text-gray-800;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBubble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .fade-in {
+    @apply opacity-0 animate-fade-in;
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  .float-bubble {
+    animation: floatBubble 6s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 3s infinite;
+  }
+
+  .hero-container {
+    @apply bg-pink-100 text-center relative min-h-screen py-16 px-5 flex flex-col items-center justify-center;
+    font-family: Georgia, serif;
+  }
+
+  .hero-text {
+    @apply text-pink-600 text-[28px] mb-6 drop-shadow-md;
+  }
+
+  /* Tombol Romantis */
+  .btn-love {
+    @apply relative inline-flex items-center justify-center px-6 py-3 text-white font-semibold transition-all duration-300 ease-in-out rounded-full shadow-lg bg-gradient-to-r from-pink-400 via-pink-500 to-rose-500;
+    background-size: 200% 100%;
+    background-position: left;
+  }
+
+  .btn-love:hover {
+    background-position: right;
+    transform: scale(1.05);
+  }
+
+  .btn-love::after {
+    content: "💖";
+    position: absolute;
+    right: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: heartbeat 1.5s infinite;
+  }
+
+  .btn-love-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-pink-400 text-pink-600 bg-white font-semibold rounded-full transition duration-300 ease-in-out hover:bg-pink-100;
+  }
+
+  .btn-yes {
+    @apply absolute text-white text-base py-2 px-6 rounded-full shadow-lg transition-all duration-300 bg-gradient-to-r from-pink-400 via-pink-500 to-rose-500 font-semibold;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: 200% 100%;
+    background-position: left;
+  }
+
+  .btn-yes:hover {
+    background-position: right;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .btn-yes::after {
+    content: " 💞";
+    animation: heartbeat 1.5s infinite;
+  }
+
+  .btn-no {
+    @apply absolute text-white bg-red-400 hover:bg-red-500 px-5 py-2 rounded-full shadow-md transition-transform duration-300 font-semibold;
+    z-index: 50;
+  }
+
+  /* Galeri Gambar */
+  .gallery-container {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4 p-4;
+  }
+
+  .gallery-image {
+    @apply rounded-xl shadow-md hover:scale-105 transition-transform duration-300;
+  }
+
+  /* Countdown */
+  .countdown-box {
+    @apply bg-white bg-opacity-80 rounded-lg p-4 shadow-md mt-6 inline-block;
+  }
+
+  .countdown-time {
+    @apply text-xl font-bold text-rose-500;
+  }
+
+  /* Footer */
+  .footer {
+    @apply text-sm text-center py-6 text-rose-400;
+  }
+
+  @keyframes openEnvelope {
+    0% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scaleY(0.5);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+  }
+
+  .animate-openEnvelope {
+    animation: openEnvelope 2s ease-in-out forwards;
+  }
+
+  @keyframes envelopePop {
+    0% {
+      transform: translateY(100px) scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-envelope {
+    animation: envelopePop 1.8s ease-out forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+  }
+
+  .fade-in.delay-500 {
+    animation-delay: 2s;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-envelope {
+    animation: floatUp 3s ease-in-out infinite;
+  }
+}
