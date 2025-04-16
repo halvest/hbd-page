@@ -24,7 +24,7 @@ export default function Hadiah() {
             Sayangku, selamat ulang tahun ya 🎂💖<br /><br />
             Di hari spesialmu ini, aku berdoa semoga semua harapan-harapan indahmu satu per satu menjadi nyata. Semoga langkahmu selalu dimudahkan, rezekimu diluaskan, dan hatimu selalu dipenuhi dengan ketenangan dan kebahagiaan. 💐<br /><br />
             Kamu pantas mendapatkan segalanya yang terbaik di dunia ini, karena kamu begitu tulus, kuat, dan luar biasa. Aku akan selalu ada di sampingmu — mendukungmu, mencintaimu, dan tumbuh bersamamu, dalam suka dan duka. 💕<br /><br />
-            Happy birthday, cinta. Semoga kita diberi waktu yang panjang untuk terus saling mencintai dan menjaga, hingga rambut kita memutih dan dunia menjadi saksi kisah kita... 💫
+            Happy birthday, cinta. Semoga kita diberi waktu yang panjang untuk terus saling mencintai dan menjaga... 💫
           </p>
         </div>
 

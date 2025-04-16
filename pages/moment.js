@@ -18,28 +18,30 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const storyline = [
-  { image: '/images/1.jpg', caption: 'Aku masih ingat tatapan pertamamu — hangat, dan entah kenapa langsung terasa dekat.' },
-  { image: '/images/2.jpg', caption: 'Di sudut kedai itu, tawa kecilmu mencairkan seluruh keraguan yang kupunya.' },
-  { image: '/images/3.jpg', caption: 'Kamu cemberut waktu aku bercanda — tapi justru itu yang bikin aku makin sayang.' },
-  { image: '/images/4.jpg', caption: 'Tanpa sadar, kamu berubah dari “teman” jadi “rumah”.' },
-  { image: '/images/5.jpg', caption: 'Detik demi detik bersamamu, rasanya waktu nggak perlu buru-buru jalan.' },
-  { image: '/images/6.jpg', caption: 'Ada tenang di matamu — seperti lagu yang ingin kudengarkan setiap malam.' },
-  { image: '/images/7.jpg', caption: 'Kita mungkin bukan pasangan sempurna, tapi kita saling memilih setiap hari.' },
-  { image: '/images/8.jpg', caption: 'Senja pernah cantik, tapi tidak pernah seindah saat kita menikmatinya berdua.' },
-  { image: '/images/9.jpg', caption: 'Dalam genggaman tanganmu, aku merasa dunia ini baik-baik saja.' },
-  { image: '/images/10.jpg', caption: 'Cintamu itu seperti lagu favorit — nggak pernah bikin bosan, malah pengen diulang terus.' },
-  { image: '/images/11.jpg', caption: 'Sejak kamu datang, pagi jadi lebih cerah — bahkan saat langit mendung sekalipun.' },
-  { image: '/images/12.jpg', caption: 'Tempat paling nyaman bukan di mana, tapi bersama siapa — dan itu kamu.' },
-  { image: '/images/13.jpg', caption: 'Senyumanmu cukup untuk menyelamatkan hari-hariku yang paling berat.' },
-  { image: '/images/14.jpg', caption: 'Kita bukan tentang sempurna, tapi tentang saling melengkapi dengan cara paling sederhana.' },
-  { image: '/images/15.jpg', caption: 'Jantungku masih berdebar tiap kamu senyum. Aneh ya, padahal kita udah sejauh ini.' },
-  { image: '/images/16.jpg', caption: 'Kita udah seperti dua kutub yang tak bisa jauh terlalu lama.' },
-  { image: '/images/17.jpg', caption: 'Kalau hidup ini bisa kuulang, aku tetap akan memilih jatuh cinta padamu — lagi dan lagi.' },
-  { image: '/images/18.jpg', caption: 'Tawamu... ah, seperti nyanyian alam yang cuma bisa kudengar kalau kamu bahagia.' },
-  { image: '/images/19.jpg', caption: 'Kisah kita nggak selalu mulus, tapi justru itu yang membuatnya pantas diceritakan.' },
-  { image: '/images/20.jpg', caption: 'Satu foto bisa menyimpan sejuta rasa — dan semuanya tentang kamu.' },
-  { image: '/images/21.jpg', caption: 'Ini bukan penutup, tapi awal dari cerita cinta yang terus tumbuh... bersamamu.' },
+  { image: '/images/1.jpg'},
+  { image: '/images/2.jpg'},
+  { image: '/images/3.jpg'},
+  { image: '/images/4.jpg'},
+  { image: '/images/5.jpg'},
+  { image: '/images/6.jpg'},
+  { image: '/images/7.jpg'},
+  { image: '/images/8.jpg'},
+  { image: '/images/9.jpg'},
+  { image: '/images/10.jpg'},
+  { image: '/images/11.jpg'},
+  { image: '/images/12.jpg'},
+  { image: '/images/13.jpg'},
+  { image: '/images/14.jpg'},
+  { image: '/images/15.jpg'},
+  { image: '/images/16.jpg'},
+  { image: '/images/17.jpg'},
+  { image: '/images/18.jpg'},
+  { image: '/images/19.jpg'},
+  { image: '/images/20.jpg'},
+  { image: '/images/21.jpg'},
 ];
+
+
 
 export default function LoveTimeCapsule() {
   const [current, setCurrent] = useState(0);
@@ -85,7 +87,7 @@ export default function LoveTimeCapsule() {
   return (
     <>
       <Head>
-        <title>LoveTime Capsule 💌</title>
+        <title>Love Moment 💌</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap"
           rel="stylesheet"
@@ -100,7 +102,7 @@ export default function LoveTimeCapsule() {
         onTouchEnd={handleTouchEnd}
       >
         {/* Audio */}
-        <audio ref={audioRef} src="/sounds/beautiful.mp3" loop autoPlay />
+        <audio ref={audioRef} src="/sounds/beautiful-in-white.mp3" loop autoPlay />
 
         {/* Floating hearts background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -217,11 +219,9 @@ export default function LoveTimeCapsule() {
                     ✖️
                   </button>
                   <h2 className="text-2xl font-script text-pink-600 mb-3">Akhirnya sampai di sini 💖</h2>
-                  <p className="text-sm text-gray-600 mb-6">Kita udah sampai di akhir momen, <br></br>terima kasih ya 💖</p>
+                  <p className="text-sm text-gray-600 mb-6">  Tapi bukan akhir dari rasa ini ya... <br />
+                  Makasih udah nemenin sampai sini 🥺💕</p>
                   <div className="flex flex-col gap-3">
-                    <button onClick={() => router.push('/gift')} className="btn w-full text-base">
-                      🎁 Lanjut ke halaman selanjutnya..
-                    </button>
                     <button
                       onClick={handleReplay}
                       className="btn w-full text-base bg-white border border-pink-300 text-pink-500 hover:bg-pink-50"

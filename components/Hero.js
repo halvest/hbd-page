@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
@@ -6,14 +8,16 @@ export default function Hero() {
   const [btnPosition, setBtnPosition] = useState({ top: '75%', left: '65%' });
   const [isAnimating, setIsAnimating] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
   const audioRef = useRef(null);
+
 
   const getRandomPosition = () => {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const padding = 80;
-    let randomTop = Math.floor(Math.random() * (vh - padding * 2)) + padding;
-    let randomLeft = Math.floor(Math.random() * (vw - padding * 2)) + padding;
+    const randomTop = Math.floor(Math.random() * (vh - padding * 2)) + padding;
+    const randomLeft = Math.floor(Math.random() * (vw - padding * 2)) + padding;
 
     return {
       top: `${(randomTop / vh) * 100}%`,
@@ -21,16 +25,13 @@ export default function Hero() {
     };
   };
 
-  useEffect(() => {
-    setBtnPosition(getRandomPosition());
-  }, []);
-
   const moveButton = () => {
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
       audioRef.current.play();
     }
 
+    setHasMoved(true);
     setIsAnimating(true);
     setBtnPosition(getRandomPosition());
 
@@ -55,34 +56,42 @@ export default function Hero() {
         Bolehkah aku jatuh cinta padamu... sekali lagi, dan seterusnya? 😌❤️
       </p>
 
-      {/* Tombol YES */}
-      <button
-        onClick={handleYes}
-        className="mt-8 px-6 py-3 bg-pink-600 text-white font-semibold rounded-full hover:bg-pink-700 transition-all z-20 text-romantic-btn shadow-lg"
-      >
-        Iya, sayang 💖
-      </button>
+      <div className="flex flex-col sm:flex-row gap-4 mt-8 z-10 items-center">
+        {!showModal && (
+          <button
+            onClick={handleYes}
+            className="px-6 py-3 bg-pink-600 text-white font-semibold rounded-full hover:bg-pink-700 transition-all text-romantic-btn shadow-lg"
+          >
+            Iya, sayang 💖
+          </button>
+        )}
 
-      {/* Tombol NO */}
-      <button
-        onMouseEnter={moveButton}
-        onTouchStart={moveButton}
-        className={`absolute px-4 py-2 bg-white border border-pink-300 text-pink-600 rounded-full font-semibold shadow-md hover:bg-rose-100 transition-all duration-300 text-sm sm:text-base ${
-          isAnimating ? 'scale-125 rotate-6' : ''
-        }`}
-        style={{
-          top: btnPosition.top,
-          left: btnPosition.left,
-          transform: 'translate(-50%, -50%)',
-        }}
-      >
-        Engga ah 😝
-      </button>
+        {!hasMoved ? (
+          <button
+            onMouseEnter={moveButton}
+            onTouchStart={moveButton}
+            className="px-6 py-3 bg-white border border-pink-300 text-pink-600 rounded-full font-semibold shadow-md hover:bg-rose-100 transition-all text-romantic-btn mt-4 sm:mt-0"
+          >
+            Engga ah 😝
+          </button>
+        ) : (
+          <button
+            onMouseEnter={moveButton}
+            onTouchStart={moveButton}
+            className={`absolute px-4 py-2 bg-white border border-pink-300 text-pink-600 rounded-full font-semibold shadow-md hover:bg-rose-100 transition-all duration-300 text-sm sm:text-base ${
+              isAnimating ? 'scale-125 rotate-6' : ''
+            }`}
+            style={{
+              top: btnPosition.top,
+              left: btnPosition.left,
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            Engga ah 😝
+          </button>
+        )}
+      </div>
 
-      {/* Sound Effect */}
-      <audio ref={audioRef} src="/sounds/cartoon-jump-6462.mp3" preload="auto" />
-
-      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center">
           <div className="bg-white rounded-2xl p-6 text-center max-w-sm mx-auto animate-fadeIn shadow-xl border border-rose-200">
@@ -100,7 +109,6 @@ export default function Hero() {
         </div>
       )}
 
-      {/* CSS */}
       <style jsx>{`
         .text-romantic {
           font-family: 'Great Vibes', cursive;

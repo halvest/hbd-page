@@ -24,7 +24,7 @@ export default function Letter3() {
             Cinta, kamu tahu nggak? Hari demi hari bersamamu adalah anugerah terindah dalam hidupku 🌸<br /><br />
             Di setiap senyummu, aku temukan ketenangan. Di setiap pelukanmu, aku merasa pulang. Kamu adalah rumah bagi hatiku yang paling hangat dan paling aman 💗<br /><br />
             Aku berdoa semoga hubungan kita selalu diberi kelapangan hati, kekuatan, dan keberkahan dari Tuhan. Semoga setiap tantangan bisa kita hadapi bersama, dan setiap bahagia bisa kita rayakan dalam pelukan satu sama lain 💞<br /><br />
-            Terima kasih karena sudah memilihku untuk jadi bagian dari hidupmu. Aku mencintaimu, hari ini, esok, dan seterusnya — sampai tak ada lagi waktu 💍
+            Terima kasih karena sudah memilihku untuk jadi bagian dari hidupmu. Aku mencintaimu, hari ini, esok, dan seterusnya... 💍
           </p>
         </div>
 
